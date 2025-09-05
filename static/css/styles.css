@@ -1,0 +1,225 @@
+/* Complaint Management System - Main Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: white;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 3s ease-in-out infinite;
+}
+
+@keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.datetime {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.quote {
+    font-size: 1.1em;
+    font-style: italic;
+    background: rgba(255, 193, 7, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #ffc107;
+    transition: all 0.5s ease;
+}
+
+/* Section Styles */
+.complaint-section {
+    margin: 30px 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.section-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+/* Form Elements */
+.complaint-input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.complaint-input:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Buttons */
+.submit-btn {
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.remove-btn {
+    background: linear-gradient(45deg, #ff4757, #ff3838);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(255, 71, 87, 0.4);
+}
+
+/* Dropdown Section */
+.dropdown-section {
+    margin-top: 30px;
+}
+
+.complaints-dropdown {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.complaint-view {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: none;
+}
+
+.complaint-text {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.complaint-date {
+    font-size: 0.9em;
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+/* Animation Styles */
+.paper-plane {
+    position: fixed;
+    font-size: 2em;
+    z-index: 1000;
+    pointer-events: none;
+    transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mailbox {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 3em;
+    z-index: 999;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+.bounce {
+    animation: bounce 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .title {
+        font-size: 2em;
+    }
+    
+    .datetime {
+        font-size: 1em;
+    }
+    
+    .mailbox {
+        font-size: 2em;
+        top: 5px;
+        right: 5px;
+    }
+}

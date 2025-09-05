@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management System 💝</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="mailbox">📮</div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Complaint Management System 💝</h1>
+            <div class="datetime" id="datetime"></div>
+            <div class="quote" id="quote">Loading inspiring quote...</div>
+        </div>
+
+        <div class="complaint-section">
+            <h2 class="section-title">📝 Share Your Complaint</h2>
+            <textarea 
+                class="complaint-input" 
+                id="complaintInput" 
+                placeholder="What's bothering you today? Let it all out... 💭"
+            ></textarea>
+            <button class="submit-btn" onclick="submitComplaint()">Send to the Universe ✈️</button>
+        </div>
+
+        <div class="dropdown-section">
+            <h2 class="section-title">📋 Open Complaints</h2>
+            <select class="complaints-dropdown" id="complaintsDropdown" onchange="viewComplaint()">
+                <option value="">Select a complaint to view...</option>
+            </select>
+            
+            <div class="complaint-view" id="complaintView">
+                <div class="complaint-text" id="selectedComplaintText"></div>
+                <div class="complaint-date" id="selectedComplaintDate"></div>
+                <button class="remove-btn" onclick="removeComplaint()" id="removeBtn">Mark as Resolved ✅</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
